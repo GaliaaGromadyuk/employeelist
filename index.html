@@ -5,7 +5,7 @@
   <title>AJAX Office Status Widget</title>
   <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/main.css">
-  
+
 </head>
 <body>
   <div class="grid-container centered">
@@ -34,5 +34,18 @@
       </div>
     </div>
   </div>
+  <script>
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function(){
+      if (xhr.readyState === 4) {
+        document.getElementById("employeeList").innerHTML = xhr.
+        responseText;
+      }
+    }
+
+    xhr.open('GET', 'js/widget.js');
+    xhr.send;
+  </script>
 </body>
 </html>
